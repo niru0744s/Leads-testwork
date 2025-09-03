@@ -16,15 +16,9 @@ export default function LeadForm() {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.feedback.trim()) newErrors.feedback = "Feedback is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
-    }
     if (formData.phone && !/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = "Phone must be 10 digits";
+      toast.error("Phone number must be 10 digits")
     }
     return newErrors;
   };
@@ -50,6 +44,7 @@ export default function LeadForm() {
           toast.error(res.data.message);
         }
       }).catch((err)=>{
+        console.log(err);
         toast.error(err.message);
       })
   };
