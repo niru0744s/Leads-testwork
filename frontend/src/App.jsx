@@ -1,6 +1,6 @@
 import {BrowserRouter , Routes , Route} from 'react-router-dom';
-import LeadForm from './components/leadForm/leadForm';
-import ShowLeads from './components/showLeads/showLeads';
+import LeadForm from './components/leadForm/LeadForm';
+import ShowLeads from './components/showLeads/ShowLeads';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
